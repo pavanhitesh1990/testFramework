@@ -7,7 +7,7 @@ Scenario: To Validate the ToDo Item is added
 
 
   @smoke
-  Scenario Outline: To Validate the ToDo sleep Item is added
+  Scenario Outline: To Validate the ToDo sleep Item "<item>" is added
     Given User in on the home page
     When User add a item "<item>" as to do
     Then user marks the item "<item>" as completed
