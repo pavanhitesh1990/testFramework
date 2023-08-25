@@ -12,7 +12,7 @@ public class Hooks {
     @After
     public void before(){
 
-        DriverFactory.getCurrentDriver().close();
+         DriverFactory.quit();
 
     }
 

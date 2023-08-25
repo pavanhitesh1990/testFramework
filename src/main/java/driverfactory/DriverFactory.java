@@ -34,7 +34,13 @@ public class DriverFactory {
     }
 
     public static WebDriver getCurrentDriver(){
+
         return threadDriver.get();
+    }
+
+    public static void quit(){
+        threadDriver.get().quit();
+        threadDriver.set(null);
     }
 
     private static ChromeOptions setChromeOptions(){

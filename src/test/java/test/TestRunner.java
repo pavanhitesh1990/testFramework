@@ -32,9 +32,9 @@ public class TestRunner {
         }
     }
 
-    @AfterClass
-    public static void tearDown(){
-        DriverFactory.getCurrentDriver().quit();
-    }
+//    @AfterClass
+//    public static void tearDown(){
+//        DriverFactory.getCurrentDriver().quit();
+//    }
 
 }
