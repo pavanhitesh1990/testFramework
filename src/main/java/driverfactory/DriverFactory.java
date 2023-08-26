@@ -36,7 +36,7 @@ public class DriverFactory {
                     sauceOptions.put("username", "oauth-pavanfunny-674af");
                     sauceOptions.put("accessKey", "cbd60814-4656-4b63-9e18-1962a525ae79");
                     sauceOptions.put("build", "selenium-build-G0FPW");
-                    sauceOptions.put("name", "SampleTest");
+                    sauceOptions.put("name", System.getProperty("testName"));
                     browserOptions.setCapability("sauce:options", sauceOptions);
                     URL url = null;
                     try {
