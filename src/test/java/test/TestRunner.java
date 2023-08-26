@@ -32,7 +32,7 @@ public class TestRunner {
             Date date = new Date();
             SimpleDateFormat DateFor = new SimpleDateFormat("dd-MM-yyyy-HH-mm-ss-sss");
             String stringDate= DateFor.format(date);
-            System.setProperty("testName",String.format("TestRun-%s-%s",stringDate,Thread.currentThread().getId()));
+            System.setProperty("testName",String.format("TestRun-%s-%s",stringDate,Thread.currentThread().getName()));
             DependencyInjector.injectDependencies("steps");
         } catch (Exception e) {
             e.printStackTrace();
