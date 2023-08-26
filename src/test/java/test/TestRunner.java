@@ -26,6 +26,7 @@ public class TestRunner {
     @BeforeClass
     public static void before(){
         try {
+           // System.setProperty("browser","sauce");
             DependencyInjector.injectDependencies("steps");
         } catch (Exception e) {
             e.printStackTrace();

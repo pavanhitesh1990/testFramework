@@ -3,6 +3,12 @@ package driverfactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DriverFactory {
 
@@ -21,6 +27,26 @@ public class DriverFactory {
                    threadDriver.set(new ChromeDriver(setChromeOptions()));
                    threadDriver.get().manage().window().maximize();
                    break;
+
+                case "sauce":
+                    ChromeOptions browserOptions = new ChromeOptions();
+                    browserOptions.setPlatformName("Windows 11");
+                    browserOptions.setBrowserVersion("latest");
+                    Map<String, Object> sauceOptions = new HashMap<>();
+                    sauceOptions.put("username", "oauth-pavanfunny-674af");
+                    sauceOptions.put("accessKey", "cbd60814-4656-4b63-9e18-1962a525ae79");
+                    sauceOptions.put("build", "selenium-build-G0FPW");
+                    sauceOptions.put("name", "SampleTest");
+                    browserOptions.setCapability("sauce:options", sauceOptions);
+                    URL url = null;
+                    try {
+                        url = new URL("https://ondemand.us-west-1.saucelabs.com:443/wd/hub");
+                    } catch (MalformedURLException e) {
+                        throw new RuntimeException(e);
+                    }
+                    RemoteWebDriver driver = new RemoteWebDriver(url, browserOptions);
+                    threadDriver.set(driver);
+                    threadDriver.get().manage().window().maximize();
             }
         }
     }
