@@ -299,7 +299,12 @@ public class ExtentCucumberAdapter implements ConcurrentEventListener {
 	}
 
 	private void finishReport() {
-		ExtentService.getInstance().flush();
+
+		try{
+			ExtentService.getInstance().flush();
+		}catch (Exception e){
+
+		};
 	}
 
 	private synchronized void handleStartOfFeature(TestCase testCase) {

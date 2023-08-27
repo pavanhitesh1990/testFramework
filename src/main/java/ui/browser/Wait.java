@@ -1,11 +1,13 @@
 package ui.browser;
 
+import com.aventstack.extentreports.model.Report;
 import driverfactory.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import report.adapter.ExtentCucumberAdapter;
 
 import java.time.Duration;
 import java.util.List;
